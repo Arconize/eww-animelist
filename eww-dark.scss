@@ -1,0 +1,57 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+.container {
+  background-color: rgba(20, 20, 25, 0.85);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 4px 0px;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cover-box {
+  border-radius: 10px;
+  min-width: 60px;
+  min-height: 80px;
+}
+
+.cover {
+  border-radius: 10px;
+}
+
+.info {
+  margin-left: 14px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.episode {
+  color: #cc693f;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.countdown {
+  color: #7f77dd;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+window {
+  background-color: transparent;
+}

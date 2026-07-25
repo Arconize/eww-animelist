@@ -1,0 +1,50 @@
+(defpoll anime_data :interval "5s"
+  "cd ~/.config/eww/eww-animelist/scripts && source .venv/bin/activate && proxychains python update_widget.py > /dev/null 2>&1; cat ~/.config/eww/eww-animelist/cache/anime_widget.json 2>/dev/null || echo '[]'")
+
+(defwidget anime-card [item]
+  (box :class "card" :orientation "h" :space-evenly false
+    (box :class "cover-box"
+<<<<<<< HEAD
+      (button :onclick "xdg-open ${item.url}"
+        (image :path "${item.cover}"
+               :image-width 60
+               :image-height 80
+               :class "cover")))
+    (box :class "score-box" :orientation "v" :space-evenly false :valign "center"
+      (label :class "my-score" :text "★ ${item.my_score}" :halign "center")
+      (label :class "overall-score" :text "Ø ${item.overall_score}" :halign "center"))
+    (box :class "info" :orientation "v" :space-evenly false :valign "center"
+      (label :class "title" :text "${item.title}" :halign "start" :limit-width 18)
+      (label :class "episode" :text "EP ${item.watched} → ${item.next_episode}" :halign "start")
+      (label :class "countdown" :text "⏱ ${item.countdown}" :halign "start")
+      (box :class "countdown-progress-box" :orientation "h" :visible {item.countdown != "Finished"}
+        (progress :class "countdown-progress"
+                  :value {item.progress_pct}
+                  :orientation "h")))))
+=======
+      (image :path "${item.cover}"
+             :image-width 60
+             :image-height 80
+             :class "cover"))
+    (box :class "info" :orientation "v" :space-evenly false :valign "center"
+      (label :class "title" :text "${item.title}" :halign "start" :limit-width 18)
+      (label :class "episode" :text "EP ${item.watched} → ${item.next_episode}" :halign "start")
+      (label :class "countdown" :text "⏱ ${item.countdown}" :halign "start"))))
+>>>>>>> e50ba7b1b60aea4547d1ec577ce85ef9c1cd3c5d
+
+(defwidget anime-list []
+  (box :class "container" :orientation "v" :space-evenly false
+    (for item in anime_data
+      (anime-card :item item))))
+
+(defwindow anime-widget
+  :monitor 0
+<<<<<<< HEAD
+  :geometry (geometry :x "20px" :y "20px" :width "300px" :height "0px" :anchor "top left")
+=======
+  :geometry (geometry :x "20px" :y "20px" :width "300px" :height "0px" :anchor "top right")
+>>>>>>> e50ba7b1b60aea4547d1ec577ce85ef9c1cd3c5d
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore true
+  (anime-list))
